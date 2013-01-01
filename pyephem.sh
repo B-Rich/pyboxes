@@ -108,6 +108,8 @@ vm su john \< /tmp/setup-john.sh
 vm dd of=/usr/lib/systemd/system/ipython.service <<-EOF
 	[Unit]
 	Description=iPython Notebook
+	Requires=dhcpcd.service
+	After=dhcpcd.service
 
 	[Service]
 	ExecStart=/home/john/main/bin/ipython notebook --ip=0.0.0.0
