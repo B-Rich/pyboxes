@@ -32,6 +32,51 @@ PyEphem astronomy library.  At the moment I am experimenting with using
 Arch Linux as the base operating system because of its simplicity (and
 its fairly pristine Python install when compared to Ubuntu!).
 
-I intend the image to have no root password (since it can only be
-reached from localhost), but at the moment the downloadable image may in
-fact have `asdf` as its root password.  It's a long story.
+Technical Specifications
+------------------------
+
+    SOFTWARE
+
+    Arch Linux as the base system
+    OpenSSH daemon for optional administration
+    iPython Notebook as the main application
+
+    LIBRARIES
+
+    iPython
+    PyEphem
+    matplotlib
+    numpy
+    scipy
+
+    SECURITY
+
+    Virtual box is behind NAT
+    Virtual box has no permission to access your system
+
+    PORT FORWARDS
+
+    Port 2022 → 22
+        In case you want to log in and look around:
+
+            ssh -p 2022 root@127.0.0.1
+
+        The root password is currently "asdf" because SSH
+        was requiring there to be *some* password.
+
+    Port 8888 → 8888
+        So users can visit http://127.0.0.1:8888/ in their
+        browser and access iPython Notebook
+
+TODO
+----
+
+* Add some kind of version number.
+* Add a welcome page describing the software present.
+* Add documentation about how to install more software.
+* Add documentation about downloading astronomy data files.
+* Add PyTables.
+* Fully automate the install so that it is fully reproducible.
+* Change port forwards to bind specifically to localhost so that other
+  people sitting in a coffee shop cannot access the iPython console or
+  SSH port.
