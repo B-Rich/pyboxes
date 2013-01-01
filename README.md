@@ -68,9 +68,11 @@ Technical Specifications
         So users can visit http://127.0.0.1:8888/ in their
         browser and access iPython Notebook
 
-TODO
+Todo
 ----
 
+* Adjust iPython so that it does not run as root.
+* Remember to unmount the Arch Linux CD next time.
 * Add some kind of version number.
 * Add a welcome page describing the software present.
 * Add documentation about how to install more software.
